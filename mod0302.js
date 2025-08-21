@@ -455,42 +455,119 @@ const books = [
 // b) Write a function getOldBooks() that uses the filter function to return all book
 // objects written before 1950.
 
-function getOldBooks() {
-  const oldBooks = books.filter(myBook => myBook.year < 1950);
-  return oldBooks;
-}
+// function getOldBooks() {
+//   const oldBooks = books.filter(myBook => myBook.year < 1950);
+//   return oldBooks;
+// }
 
-console.log(getOldBooks());
+// console.log(getOldBooks());
+// Output: [
+//   {
+//     id: 1,
+//     title: 'The Great Gatsby',
+//     author: 'F. Scott Fitzgerald',
+//     year: 1925
+//   },
+//   { id: 3, title: '1984', author: 'George Orwell', year: 1949 },
+//   {
+//     id: 4,
+//     title: 'Brave New World',
+//     author: 'Aldous Huxley',
+//     year: 1932
+//   }
+// ]
 
-
-// B)
-// B)
-// B)
-// B) 
-
-
-
-
-
-
-
-
-
-
+// b) function getOldBooks() { - new function.
+// b) books.filter(...) goes through each item in my books
+// b) myBook => myBook.year < 1950 - this is how I’d check to confirm each book is less than 1950.
+// b) return oldBooks; - returns answer. Should only be old books.
+// b) console.log(getOldBooks()); - prints.
 
 
 // c) Write a function addGenre() that uses the map function to add a new genre property
 // to all of the above books, with the value ‘classic’.
 
-// d) (Extension) Write a function getTitles(authorInitial) that uses map and
+
+function addGenre() {
+  return books.map(myBook => {
+    return { ...myBook, genre: 'classic' };
+  });
+}
+
+console.log(addGenre());
+
+// c)  Output: 
+// [
+//   {
+//     id: 1,
+//     title: 'The Great Gatsby',
+//     author: 'F. Scott Fitzgerald',
+//     year: 1925,
+//     genre: 'classic'
+//   },
+//   {
+//     id: 2,
+//     title: 'To Kill a Mockingbird',
+//     author: 'Harper Lee',
+//     year: 1960,
+//     genre: 'classic'
+//   },
+//   {
+//     id: 3,
+//     title: '1984',
+//     author: 'George Orwell',
+//     year: 1949,
+//     genre: 'classic'
+//   },
+//   {
+//     id: 4,
+//     title: 'Brave New World',
+//     author: 'Aldous Huxley',
+//     year: 1932,
+//     genre: 'classic'
+//   },
+//   {
+//     id: 5,
+//     title: 'The Catcher in the Rye',
+//     author: 'J.D. Salinger',
+//     year: 1951,
+//     genre: 'classic'
+//   }
+// ]
+
+
+// c) function addGenre() { - new function. 
+// c) return books.map(myBook => { - (map does the same thing ‘books.filter(...)’ does. Sorts through each item/array.
+// c) return { ...myBook, genre: 'classic' }; - using spread to make a copy of the current book and its properties. Also gave my genre the property name of classic.
+// c) console.log(addGenre()); - prints to terminal.
+
+
+
+
+
+
+
+
+
+
+
+
+// d) ****** (Extension) Write a function getTitles(authorInitial) that uses map and
 // filter together to return an array of book titles for books written by authors whose
 // names start with authorInitial.
 
-// e) (Extension) Write a function latestBook() that uses find and forEach to get the
+
+// e) ******  (Extension) Write a function latestBook() that uses find and forEach to get the
 // book with the most recent publication date.
 
 
 
+// 7 Ref): https://www.northcoders.com/blog/the-beginners-guide-to-foreach-map-and-filter-in-javascript
+// 7 Ref): https://jefflongbeard.medium.com/understanding-foreach-map-filter-and-find-in-javascript-f91da93b9f2c
+// 7 Ref):  https://dev.to/wafa_bergaoui/understanding-javascript-array-methods-foreach-map-filter-reduce-and-find-2o4f
+// 7 Ref): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+// 7 Ref): https://javascript.info/array-methods
+// 7 Ref): https://www.geeksforgeeks.org/javascript/map-vs-filter-in-javascript/
 
 
 
